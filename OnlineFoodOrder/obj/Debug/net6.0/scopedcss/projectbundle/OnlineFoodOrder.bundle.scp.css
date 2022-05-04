@@ -1,0 +1,49 @@
+/* _content/OnlineFoodOrder/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-xypz70n0vv] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-xypz70n0vv] {
+  color: #0077cc;
+}
+
+.btn-primary[b-xypz70n0vv] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-xypz70n0vv], .nav-pills .show > .nav-link[b-xypz70n0vv] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-xypz70n0vv] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-xypz70n0vv] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-xypz70n0vv] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-xypz70n0vv] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-xypz70n0vv] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
