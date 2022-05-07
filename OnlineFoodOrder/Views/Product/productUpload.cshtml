@@ -1,0 +1,32 @@
+﻿
+@model OnlineFoodOrder.Models.ProductUpload;
+@{
+    //ViewData["Title"] = "Upload";
+}
+
+
+
+
+<h2>Upload Image</h2>
+
+<form enctype="multipart/form-data" method="post">
+    <dl>
+        <dt>
+            <label asp-for="@Model.image"></label>
+        </dt>
+        <dd>
+            <input asp-for="@Model.image" type="file">
+            <span asp-validation-for="@Model.image"></span>
+        </dd>
+        @* <div class="container">
+         @Model.imageUploadStatus
+     </div>*@
+    </dl>
+     <div class="form-group">
+                <input type="submit"  value="SaveAndFinish" class="btn btn-primary" />
+            </div>
+
+            <div>
+    <a asp-action="Index" asp-controller="Restaurant">Back to List</a>
+</div>
+</form>   

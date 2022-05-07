@@ -7,6 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<foodieContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Connstr"));
+});
 builder.Services.AddDbContext<AppSecurityContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SecurityConnStr"));
@@ -14,6 +18,10 @@ builder.Services.AddDbContext<AppSecurityContext>(options =>
 builder.Services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppSecurityContext>().AddDefaultUI();
 
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IServices<RestaurantInfo, int>, RestaurantService>();
+builder.Services.AddScoped<IServices<FoodCategory, int>, CategoriesServices>();
+builder.Services.AddScoped<IServices<Product, int>, ProductServices>();
+
 builder.Services.AddSession(options => {
     options.IdleTimeout = TimeSpan.FromMinutes(20);
 });
@@ -30,12 +38,13 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
+app.UseAuthentication();
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Auth}/{action=Login}/{id?}");
 
 app.Run();

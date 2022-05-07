@@ -1,6 +1,8 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
+//using Microsoft.Extensions.Options;
 using static OnlineFoodOrder.Models.AuthClass;
+using OnlineFoodOrder.Models;
 
 namespace OnlineFoodOrder.Services
 {
@@ -30,23 +32,25 @@ namespace OnlineFoodOrder.Services
             return result;
         }
 
-        public async Task<string> LoginUser(Login login)
+        public async Task<requestType> LoginUser(Login login)
         {
-            string loginResult = "Success";
+            int loginResult = (int)requestType.Sucessfull;
             var user = await _userManager.FindByEmailAsync(login.Email);
             var allUser = _userManager.Options.User.ToString();
             if (user == null)
             {
-                loginResult = "Invalid Email";
-                return loginResult;
+                loginResult = (int)requestType.InvalidEmail;
+                return (requestType)(int)requestType.InvalidEmail;
             }
             //_httpContext.Session.SetString("CurrentUser", user.UserName);
             var result = await _signInManager.PasswordSignInAsync(user.UserName, login.Password, false, lockoutOnFailure: true);
             if (!result.Succeeded)
             {
-                loginResult = "Invalid Password";
+                loginResult = (int)requestType.InvalidPassword;
+               
             }
-            return loginResult;
+            return (requestType)(int)requestType.InvalidPassword;
+
         }
     }
 }

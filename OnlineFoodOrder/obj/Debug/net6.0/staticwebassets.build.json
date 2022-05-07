@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JEaAJc666MuxeZdy0UGep8IlFVDuNI6Ku7LcVSRej2I=",
+  "Hash": "LG804KeQtbT9D5mpXXqwNKNQ2bPrrPvxzTe4FOLhaKU=",
   "Source": "OnlineFoodOrder",
   "BasePath": "_content/OnlineFoodOrder",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Coditas\\source\\repos\\OnlineFoodOrder\\OnlineFoodOrder\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\OnlineFoodOrder.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Coditas\\source\\repos\\OnlineFoodOrder\\OnlineFoodOrder\\wwwroot\\categoryImage\\OIP (1).jpg",
+      "SourceId": "OnlineFoodOrder",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Coditas\\source\\repos\\OnlineFoodOrder\\OnlineFoodOrder\\wwwroot\\",
+      "BasePath": "_content/OnlineFoodOrder",
+      "RelativePath": "categoryImage/OIP (1).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\categoryImage\\OIP (1).jpg"
     },
     {
       "Identity": "C:\\Users\\Coditas\\source\\repos\\OnlineFoodOrder\\OnlineFoodOrder\\wwwroot\\css\\site.css",

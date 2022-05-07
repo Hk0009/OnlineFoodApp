@@ -7,8 +7,13 @@ using static OnlineFoodOrder.Models.AuthClass;
 
 namespace MessagingApp.Controllers
 {
+   /* enum options{
+        Register,
+        Sucess
+    }*/
     public class AuthController : Controller
     {
+       
         private readonly AuthService _authService;
         private readonly UserManager<IdentityUser> _userManager;
 
@@ -29,17 +34,17 @@ namespace MessagingApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(AuthClass.Login login, string? choice)
+        public async Task<IActionResult> Login(AuthClass.Login login, int choice)
         {
-            if (choice == "Register as a new user")
+            if (choice == (int)requestType.Register )
             {
                 return RedirectToAction("Register");
             }
 
             var authResult = _authService.LoginUser(login).Result;
-            if (authResult == "Success")
+            if (authResult == requestType.Sucessfull)
             {
-                ViewBag.message = "Login Successful";
+                ViewBag.message = requestType.LoginSuccessful;
 
                 var currentUser = await _userManager.FindByEmailAsync(login.Email);
                 HttpContext.Session.SetString("CurrentUser", currentUser.UserName);
